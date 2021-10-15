@@ -8,11 +8,24 @@
     </tr>
   </thead>
   <% @books.each do |book| %>
+  
+  <span>
+    <%= link_to book.title, book_path(book.id) %>
+  </span>
 
   <tbody>
     <tr>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+      <td>
+        <a class="show" href="/books/book_path">Show</a>
+      </td>
+      <td>
+        <a class="edit" href="/books/book_path/edit">Edit</a>
+      </td>
+      <td>
+        <a data-confirm="Are you sure?" class="destroy" rel="nofollow" data-method="delete" href="/books/@book">Destroy</a>
+      </td>
     </tr>
   </tbody>
 </table>
